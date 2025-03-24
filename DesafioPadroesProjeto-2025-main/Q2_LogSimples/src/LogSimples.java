@@ -4,9 +4,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class LogSimples implements Iterable<String>{
+    static private LogSimples instance;
     private List<String> mensagens;
 
-    public LogSimples(){
+    private LogSimples(){
         mensagens = new LinkedList<>();
     }
 
@@ -18,5 +19,12 @@ public class LogSimples implements Iterable<String>{
     @Override
     public Iterator<String> iterator() {
         return mensagens.iterator();
+    }
+
+    static public LogSimples getInstance() {
+        if (instance == null) {
+            instance = new LogSimples();
+        } 
+        return instance;
     }
 }
