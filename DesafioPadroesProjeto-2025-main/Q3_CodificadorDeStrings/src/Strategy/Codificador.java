@@ -1,4 +1,20 @@
-public class Codificador extends ICodificadorStrategy {
+import java.util.*;
+
+public class Codificador implements ICodificadorStrategy {
+    private CodificadorDesloca codificadorDesloca = new CodificadorDesloca();
+    private CodificadorSimples codificadorSimples = new CodificadorSimples();
+
+    @Override
+    public String codifica(String str) {
+        // Default implementation or logic for codifica
+        return codifica(Tipo.SIMPLES, str);
+    }
+
+    @Override
+    public String decodifica(String str) {
+        // Default implementation or logic for decodifica
+        return decodifica(Tipo.SIMPLES, str);
+    }
 
     public enum Tipo {SIMPLES,DESLOCA};
     public Map<Character,Character> tabCod;
@@ -23,9 +39,9 @@ public class Codificador extends ICodificadorStrategy {
     public String codifica(Tipo tipo,String str){
         switch(tipo){
             case SIMPLES:
-                return codificaSimples(str);
+                return codificadorSimples.codifica(str);
             case DESLOCA:
-                return codificaDesloca(str);
+                return codificadorDesloca.codifica(str);
             default:
                 return str;
         }
@@ -34,9 +50,9 @@ public class Codificador extends ICodificadorStrategy {
     public String decodifica(Tipo tipo,String str){
         switch(tipo){
             case SIMPLES:
-                return deCodificaSimples(str);
+            return codificadorSimples.codifica(str);
             case DESLOCA:
-                return deCodificaDesloca(str);
+            return codificadorDesloca.codifica(str);
             default:
                 return str;
         }

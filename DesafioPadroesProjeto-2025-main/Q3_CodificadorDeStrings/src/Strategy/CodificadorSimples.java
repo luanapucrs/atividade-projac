@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class CodificadorSimples implements ICodificadorStrategy {
 
     public enum Tipo {SIMPLES,DESLOCA};

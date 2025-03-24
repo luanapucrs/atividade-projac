@@ -4,14 +4,14 @@ public class Main {
 
         // Usando estratégia de codificação simples
         codificador.setStrategy(new CodificadorSimples());
-        String codificadoSimples = codificado.codificar("abc");
-        System.out.println("Codificado Simples: " + this.codificadoSimples);
-        System.out.println("Decodificado Simples: " + codificador.decodifica(this.codificadoSimples));
+        String codificadoSimples = codificador.codifica("abc");
+        System.out.println("Codificado Simples: " + codificadoSimples);
+        System.out.println("Decodificado Simples: " + codificador.decodifica(codificadoSimples));
 
         // Usando estratégia de deslocamento
         codificador.setStrategy(new CodificadorDesloca());
-        String codificadoDesloca = codificado.codificar("hello");
-        System.out.println("Codificado Desloca: " + this.codificadoDesloca);
-        System.out.println("Decodificado Desloca: " + codificador.decodifica(this.codificadoDesloca));
+        String codificadoDesloca = codificador.codifica("hello");
+        System.out.println("Codificado Desloca: " + codificadoDesloca);
+        System.out.println("Decodificado Desloca: " + codificador.decodifica(codificadoDesloca));
     }
 }

@@ -1,4 +1,6 @@
-public class CodificaDesloca implements ICodificadorStrategy {
+import java.util.*;
+
+public class CodificadorDesloca implements ICodificadorStrategy {
 
     public enum Tipo {SIMPLES,DESLOCA};
     public Map<Character,Character> tabCod;
